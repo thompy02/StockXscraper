@@ -1,17 +1,15 @@
-from bs4 import BeautifulSoup
-import requests
+from selenium import webdriver
+PATH = "C:\Program Files (x86)\chromedriver.exe"
+driver = webdriver.Chrome(PATH)
 
-URL = "https://stockx.com/air-jordan-5-retro-moonlight-2021"
-page = requests.get(URL)
+driver.get("https://stockx.com/air-jordan-5-retro-moonlight-2021")
 
-print(page.text)
+LastSale = driver.find_element_by_xpath('//*[@id="main-content"]/div/section[1]/div[3]/div[2]/div[2]/div[1]/p[2]')
 
-source = requests.get('https://stockx.com/air-jordan-5-retro-moonlight-2021').text
-soup = BeautifulSoup(source, 'lxml')
+print(LastSale)
 
-##BuyPrice = soup.find('div', class_='<div class="chakra-stat css-1mbo1ls">')
 
-ShoeName = soup.find("div",'class="chakra-heading css-1gbu8yz')
-print(ShoeName.text.prettify())
+##BuyPrice = 
 
-##ShoeSku = soup.find
+
+##ShoeSku = 
