@@ -18,9 +18,11 @@ print(BuyPrice.text + " Is the current Price to buy")
 
 ##ShoeSku = 
 
+SalePrice = LastSale.text
+
 PriceFormula = 1.2
 
-PriceAdjustment = (float(LastSale.text) * float(PriceFormula))
+PriceAdjustment = (float(SalePrice) * float(PriceFormula))
 
 print(PriceAdjustment)
 
