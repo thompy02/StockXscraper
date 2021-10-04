@@ -18,11 +18,13 @@ print(BuyPrice.text + " Is the current Price to buy")
 
 ##ShoeSku = 
 
-SalePrice = LastSale.text
+##this just removes the dollar sign from the scraped price allowing you to convert to a float
+SalePrice = LastSale.text.translate({ord("$"):None})
 
 PriceFormula = 1.2
 
 PriceAdjustment = (float(SalePrice) * float(PriceFormula))
+## price adjustment doesnt work for shoes above 1000 dollars it seems
 
-print(PriceAdjustment)
+print(str(PriceAdjustment) + " This is what you should sell this for.")
 
