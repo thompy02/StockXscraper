@@ -1,13 +1,18 @@
 import sys
 
 from PyQt5.QtWidgets import QApplication
-from PyQt5.QtWidgets import Qlabel
-from PyQt5.QtWidgets import Qwidget
+from PyQt5.QtWidgets import QLabel
+from PyQt5.QtWidgets import QWidget
 
 app = QApplication(sys.argv)
 
-window = Qwidget()
+window = QWidget()
 window.setWindowTitle('PyQt5 App')
-window.SetGeometry(100,100,280,80)
+window.setGeometry(300,300,560,200)
 window.move(60,15)
-helloMsg = Qlabel('<h1>Hello World!</h1>')
+helloMsg = QLabel('<h1>Hello World!</h1>', parent=window)
+helloMsg.move(60,15)
+
+window.show()
+
+sys.exit(app.exec_())
