@@ -62,7 +62,10 @@ tr:nth-child(even) {
 <body style ="background-color: #495867;">
     <div class="topnav">
         <h1 style = color:white;>StockX Scraper</h1>
-        <input type="text" placeholder="paste shoe link here">
+        <form action="/cgi-bin/StockXscraper.py" method="get">
+            Shoe Link: <input type="text" name="Shoe-Link">  <br/>
+            <input type="submit" value="Submit" />
+        </form>
     </div>
 
     <div class="table">

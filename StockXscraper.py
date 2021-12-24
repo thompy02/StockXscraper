@@ -1,10 +1,14 @@
+import mysql.connector
+import cgi
 from selenium import webdriver
 PATH = "C:\Program Files (x86)\chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 
 ##"https://stockx.com/air-jordan-5-retro-moonlight-2021"
 
-ShoeLink = input("paste your shoe link here")
+Html_Bridge = cgi.FieldStorage()
+
+ShoeLink = Html_Bridge.getvalue #("paste your shoe link here")
 
 driver.get(ShoeLink)
 
@@ -28,4 +32,16 @@ PriceAdjustment = (float(SalePrice2) * float(PriceFormula))
 ## price adjustment doesnt work for shoes above 1000 dollars it seems
 
 print("$" + str(PriceAdjustment) + " This is what you should sell this for.")
+
+
+## code to allow for this python script to interact with the SQL database 
+
+StockXscraperDB = mysql.connector.connect(
+    host = "localhost",
+    User = "root",
+    password = "Getoutofmyshit1!"
+)
+
+#sql_1 = if onclick == True:
+#cursor.execute("""INSERT INTO Shoenames""")
 
